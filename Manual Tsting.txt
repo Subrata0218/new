@@ -1,0 +1,184 @@
+
+1. requirement >> we collect requirement from client
+
+2. developers will start developing the feature
+
+3. at the same time, QA is identifying Test Scenarios and Test Cases
+
+4. Once the feature is ready, qa team will start testing the feature
+
+5. if there are no defects, then qa team will approve that feature
+
+6. If there are defects identified, qa team will raise defects and inform the manager and developers
+
+7. Again developers will work to fix that defect, once fixed, he will move to QA plate
+
+8. QA Team will test the defect, if working fine, it will be closed 
+
+Requirement:
+
+Calculator Application
+
+1. Addition
+
+2. Subtraction
+
+3. Multiplication
+
+4. Division 10 days for one feature Approach1: 
+
+Approach2: V Model:
+
+Retesting: testing that the defect is fixed and working as expected
+
+Regression Testing : making sure that the new changes have not impacted the existing working code Smoke: is to check the stability of the new build
+
+Sanity: is to check the new feature introduced/delivered Funtional Testing - FT
+
+Non Functional Testing - NFT Performance Testing: used for testing the speed, response time, stability, reliability
+
+    load: checks the application behavior under desired loads
+
+    stress: checks the application behavior if we go for extreme workloads  
+Compatibility Testing: used to check is the software is capable of running on differenet hardwares, OS, application, network, mobile 
+
+Usability Testing: how easy and user friendly the application is
+
+User Interface Testing: GUI,   
+
+Test Planning:
+
+we create a Test Plan
+
+Test Plan: it is a detailed document describing the test strategy, objectives, schedule, estimation, delverables and resources 
+Importance of Test Plan: 
+
+Components of Test Plan:
+
+1. Test Plan Identifier
+
+2. Introduction
+
+3. Features to be tested (In Scope): list down the features to be tested
+
+4. Features not to be tested (Out of Scope): list down the features not to be tested
+
+5. Approach: Functional Testing, Integration Testing, System Testing
+
+6. Entry and Exit Criteria    
+ Entry:
+
+    feature to be tested should be ready
+
+    white box and unit testing is completed
+
+    test data should be ready
+
+    necessary resource should be ready     
+Exit:
+
+    When all test cases are executed
+
+    Most of the test cases are passed
+
+    there should be no major or blocker bugs, some minor bugs may exist 
+7. Test Deliverables: 
+
+    Test Plan
+
+    Test Cases
+
+    Test Scenarios
+
+    RTM Requirement Tracebility Matrix
+
+    Defect Report
+
+    Test Execution Report
+
+    Graphs and Metrics
+
+    Release Notes 
+8. Environment Details 
+
+9. Responsibilities
+
+    Test Manager
+
+    Test Lead
+
+    Senior Test Engineer
+
+    Junior Test Engineer
+
+    Freshers 
+10. Staffing and Training 
+
+11. Schedule
+
+12. Risks and Mitigation
+
+13. Approvals   
+
+
+
+ 
+
+Defects:
+
+Defect is a variation or deviation of the application from the original business requirements
+
+Defect is an error in coding which causes incorrect or unexpected results 
+
+Defect Template:
+
+    Defect_ID: a unique id for the defect
+
+    Description: a short description about the defect
+
+    Version: when the defect was identified, in which version
+
+    Steps: detailed steps using which developer can reproduce the defect, also attach screenshots
+
+    Date Raised: when the defect was raised
+
+    Detected By: name of the tester who has identified the defect
+
+    Status: Status of the defect
+
+    Fixed By/Assignee: who is working on the defect
+
+    Date Closed:
+
+    Severity:
+
+    Priority: 
+
+Priority: is defined as when the defect should be fixed
+
+    low medium high
+
+Severity: degree of impact,  the defect has on the application
+
+    critical major minor cosmetic moderate 
+
+Patient 1: can die in 5 hours if no treatment given
+
+Patient 2: can die in 2 hours if no treatment given 
+
+Defect Life Cycle:
+
+New: when a new defect is logged for the first time
+
+Assigned: defect is assigned to a developer to work on it
+
+Open: developer has started working on the defect
+
+Fixed: required code changes are done by the developer
+
+Pending Retest/RFQA: defect is fixed and ready for test
+
+Retest: means the tester is re testing the defect
+
+
+

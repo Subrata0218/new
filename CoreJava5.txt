@@ -1,0 +1,1266 @@
+final
+1  final member variable  : constants, can not change the value
+    final float PI  =3.14f;
+ 
+2 final method : can not override
+ 
+    public final void fun2()   //parent class method 
+    {
+        System.out.println("this is parent fun1...");
+    }
+    if the method is defined as final , can not override in the child class
+
+3 final class : stop inheritance
+ 
+public final class class1 {
+     int a=10;
+     public void fun1()
+     {
+         System.out.println("slfks");
+     }
+}
+ 
+--err
+public class childclass  extends class1{
+ 
+}
+
+
+
+[10:31] Priti Dalvi (Guest)
+Exception  what is Exception ?
+
+Exception is abnormal situation occured in a code.
+
+an Exception is an unexpected event. which has occured during the program execution
+
+Exception handling is error handling.
+
+user can provide own error messages using Exception handling --why to use Exception ?
+
+even if there is an error , the program will continue execution of the prog
+
+rest of the part of the program is executed  
+
+-types
+
+1. checked Exception  / compile time Exception 
+
+2. unchecked Exception  / runtime Exception  
+
+javac file1.java     ---: compile
+
+java file1        ---: runtime
+
+        ...................     JVM handle the exception --types of block
+
+1 try
+
+    we write the code which may result to an error 2 catch
+
+    is executed if there is error in try block
+
+    if there is no error in try block catch block is not executed 
+
+    can have multiple catch, at least 1 should be there
+
+    the matching catch block will be executed 3 finally
+
+    will be executed always , irrespective of the error
+
+    this block is optional
+
+    used to close the resources , fileio and connection object can be closed    
+
+    release the resources try{​​​​​
+
+..sldkfsldkf
+
+..
+
+..
+
+}​​​​​
+
+catch(e1)
+
+{​​​​​
+
+..
+
+..
+
+}​​​​​
+
+catch(e2)
+
+{​​​​​
+
+..
+
+..
+
+}​​​​​
+
+catch(e3)
+
+{​​​​​
+
+..
+
+..
+
+}​​​​​
+
+finally
+
+{​​​​​
+
+..
+
+..
+
+}​​​​​
+
+
+
+
+
+
+
+
+
+
+package exceptionpack;
+ 
+public class SnigleException {
+ 
+    public static void main(String[] args) {
+
+        fun1();  //works , can call directly , without createing any object  //1
+
+        SnigleException o=new SnigleException();  //2
+        o.fun1();
+
+        SnigleException.fun1();  //3   : class level 
+        //class         method
+
+
+    }
+    public static void fun1()
+    {
+        System.out.println("priti");
+    }
+ 
+}
+
+
+[11:43] Priti Dalvi (Guest)
+package exceptionpack;
+
+import java.io.*; public class CheckException {​​​​​     public static void main(String[] args) throws IOException {​​​​​
+
+        FileInputStream fis=new FileInputStream("d:\\priti1\\myfile1.txt");
+
+        //throw 
+
+        //throws  : it used to throw the exception
+
+        int k;
+
+        while((k=fis.read()) !=-1)
+
+        {​​​​​
+
+            System.out.println((char)k);
+
+        }​​​​​
+
+        fis.close();     }​​​​​ }​​​​​
+
+
+
+
+[11:43] Priti Dalvi (Guest)
+package exceptionpack;
+
+import java.io.*; public class CheckException {​​​​​     public static void main(String[] args) throws IOException {​​​​​
+
+        FileInputStream fis=new FileInputStream("d:\\priti1\\myfile1.txt");
+
+        //throw 
+
+        //throws  : it used to throw the exception
+
+        int k;
+
+        while((k=fis.read()) !=-1)
+
+        {​​​​​
+
+            System.out.println((char)k);
+
+        }​​​​​
+
+        fis.close();     }​​​​​ }​​​​​
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    public static int divide(int a, int b) 
+    {
+        return (a/b);  //100/10        : 10
+    }
+
+    public static void main(String[] args) {
+          int num1=100;
+            int num2=10;
+            int result;
+
+            try {  //code may result to an error
+                //if there is no error in try , then catch is not executed 
+                result=divide(num1, num2);
+                System.out.println("the result is " + result);
+            }
+            catch(ArithmeticException e) 
+            {
+//                System.out.println("can not divide by 0");
+//                System.out.println(e);
+//                System.out.println(e.getMessage());
+                e.printStackTrace();  //shows the line number and teh function name   
+            } 
+            finally
+            {
+                System.out.println("this is my finally !!!");
+            }
+            }
+
+ 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+package exceptionpack;
+ 
+public class MultiExcep {
+ 
+    public static int divide(int a, int b)     {
+        return (a/b);  
+        }
+
+    public static void main(String[] args) {
+          String  num1="100";
+          String  num2="abc";  //0  abc
+            int result;
+
+            try { 
+              int a1=Integer.parseInt(num1);
+              int b1=Integer.parseInt(num2);
+                result=divide(a1, b1);
+                System.out.println("the result is " + result);
+            }
+            catch(ArithmeticException e)   // 100 /0
+            {    
+                System.out.println(e.getMessage());
+            } 
+            catch(NumberFormatException e1)
+            {
+                System.out.println("second ex");
+                System.out.println("the expected input is a number and not a character !!!");
+                System.out.println(e1.getMessage());
+            }
+            catch(Exception e2)  //if there is no matching exec then this exec will be raised 
+            {
+                System.out.println(e2.getMessage());
+            }
+            finally
+            {
+                System.out.println("this is my finally !!!");
+            }
+            }
+
+
+}
+
+*******************************************************************************************************************************************************88
+
+
+
+[12:36] Priti Dalvi (Guest)
+              java.lang 
+
+            |
+
+             Object
+
+            |
+
+            Throwable
+
+            |
+
+    -----------------------------------
+
+    |            |
+
+   Error      Exception
+
+    |            |
+
+                 |
+-------------------------------------------------
+
+    |                                           |    
+
+RuntimeException                   Others Exception(Checked)/ compiletime
+ (UNCHECKED/logical err)                   |
+
+   |            ------------------------------------------
+
+   |            |         |              |      |
+
+   |            SQLException EOFException IOException FileNotFoundException    |                
+
+--------------------------------------------------------------------------
+
+|            |    |    |           |
+
+ArithmeticException |   | NumberFormatException RedSignalDishonouredException 
+
+            |   |
+
+   NullPointerException |
+
+            |
+
+    IndexOutOfBoundsException
+
+        |
+
+------------------------------------
+
+|                |
+
+ArrayIndexOutOfBoundsException StringIndexOutOfBoundsException 
+
+--details
+
+NumberFormatException : datatype is integer and stored the string into ArithmeticException   : divide by 0 IOException           : file i/o : need to be handle if using file I/O
+
+            : reading  , writing in a file , file is missing IndexOutOfBounds      : If a request for a negative or an index greater than or equal to size of array ArrayIndexOutOfBounds :  access an ele of an array for which index given wrongly StringIndexOutOfBounds :  thrown by the methods of the String class, in order to indicate that an index is either negative, or greater than the size of the string  --eg
+
+substr("priti",10, 2)  : pr 
+
+NullPointer          :  If we have a null value in any variable, performing any operation on the variable Emp emp=new Emp();
+
+emp=null;
+
+emp.accept();        -->
+
+emp.disp()        ---> SQLException  : The SQLException class provides information on a database access error. EOFException  : Signals that an end of file or end of stream has been reached unexpectedly during input. FileNotFoundException : specified pathname has failed.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[12:59] Priti Dalvi (Guest)
+package exceptionpack;
+
+import java.util.Scanner; class PasswordException extends Exception{​​​​​   //1
+
+    public PasswordException(String s)  //2 para constructor
+
+    {​​​​​
+
+        super(s); //calling the parent class  constructor
+
+    }​​​​​
+
+}​​​​​ public class UserdefindEx {​​​​​
+
+    public static void main(String[] args)  {​​​​​
+
+        //accept a password from the user , if the legth is less than 5 
+
+        // throw an exception
+
+        Scanner sc=new Scanner(System.in);
+
+        System.out.println("enter the password ");
+
+        String password=sc.next();
+
+        try    {​​​​​
+
+            if(password.length() <5)  //3
+
+            {​​​​​     //4
+
+                throw new PasswordException("Error : Password should be more than 5 characters !!!");
+
+            }​​​​​
+
+            else
+
+                System.out.println("Valid password !!");
+
+        }​​​​​
+
+        catch(Exception e)
+
+        {​​​​​
+
+            System.out.println(e.getMessage());
+
+        }​​​​​
+
+        finally
+
+        {​​​​​
+
+            System.out.println("this is finally block");
+
+        }​​​​​     }​​​​​ }​​​​​
+
+
+
+
+
+
+--diff in throw and throws
+throw  : userdefined exe  , predefined
+    if condition   : to be used
+    need to write try and catch
+
+throws  : predefined : used with the method
+    no need to write try and catch
+
+
+
+
+
+String class :
+    String object is immutable 
+    do not change he value
+ 
+String a="priti";
+a="uma";
+a="somu"
+ 
+a            a         a
+priti            uma        somu
+ 
+Stfing is a object java.lang.String
+ 
+--inbuilt methods of the String class
+
+
+
+
+
+
+
+
+[14:16] Priti Dalvi (Guest)
+package stringdemo; public class Strinfclass {​​​​​     public static void main(String[] args) {​​​​​
+
+        String a="Priti";
+
+        System.out.println(a.toUpperCase());
+
+        System.out.println(a.toLowerCase());
+
+        String a1="          Uma ";
+
+        System.out.println(a1.trim());  //to remove the extra spaces
+
+        String newa=a.replace("i", "ee");
+
+        System.out.println(newa); //Preetee
+
+        System.out.println(newa.charAt(2)); //e   3rd ch
+
+        System.out.println(newa.concat(" dalvi"));
+
+        System.out.println(newa.contains("ree"));   //t  /f       }​​​​​ }​​​​​
+
+
+
+
+
+
+
+
+[14:24] Priti Dalvi (Guest)
+methods of String class:  methods of String class:
+
+1. toUpperCase()
+
+2. toLowerCase()
+
+3. startsWith("P")  : to check whether it start with character  : t/f
+
+4. endsWith("i")  : to check whether it end with character      : t/f
+
+5. trim()  //eliminates spaces before and after string
+
+6. length()   : 5
+
+int a=10;    
+
+7. String.valueOf(a)  : coverts given type such as int, long, float, double, boolean, char and char array into string.
+
+8. a.replace("Lnt", "LTI")
+
+9. equals()            : an compare two String  : returns t/f
+
+10. equalsIgnoreCase() 
+
+11. compareTo() method is used for comparing two strings with Unocode values
+
+12. hashCode()    : returns the hash code of the string.
+
+13. charAt(3)    : 3rd ch is returned 
+
+14. indexOf('B')    : Returns the index of first occurrence of the specified character 
+
+15.indexOf('B', 2)    : position from which to search
+
+16. lastIndexOf('b')    :  last occurrence of the character
+
+17. lastIndexOf('b',2)     : position from which to search
+
+18. indexOf(String str)  : index of first occurrence of specified substring str.
+
+19.lastIndexOf(String str)
+
+20. substring(3)    
+
+21. substring(3, 5)    : start and end
+
+22. concat(String str2)    : Concatenates at the end of the string.
+
+23. contains("pr")        :   T / F
+
+24. isEmpty()            :  returns true if the given string has 0 length
+
+                 : else false
+
+25. join()            : joining the elements of a List by a delimiter 
+
+26. split()          :  splitting a String into its substrings based on the given delimiter
+
+27. toCharArray()     : Converts the string to a character array.
+
+28. valueOf()            : returns a string representation of passed arguments such as int, long, float, double, char and char array.
+
+
+
+
+
+
+
+
+
+[14:33] Priti Dalvi (Guest)
+package stringdemo; public class StringBuilderDemo {​​​​​     public static void main(String[] args) {​​​​​
+
+        StringBuilder s1=new StringBuilder("Welcome");
+
+        s1.append("Priti");
+
+        System.out.println(s1);
+
+        //to change the specific position
+
+        System.out.println(s1.insert(1,"dy"));
+
+        //1 : position  2: value
+
+        System.out.println(s1);
+
+        StringBuilder s2=new StringBuilder("Ramesh");
+
+        s2.replace(3, 6, "ach");
+
+        System.out.println(s2);     }​​​​​ }​​​​​
+
+
+
+
+
+
+
+
+
+
+
+--methods of StringBuilder
+1.insert()
+2 append()
+3 replace
+4 delete
+5 reverse
+6 length
+7 charAt()
+8 substring()
+9 indexOf
+10 lastIndexof()
+ 
+ 
+--StringBuffer
+1.insert()
+2 append()
+3 replace
+4 delete
+5 reverse
+6 length
+7 charAt()
+8 substring()
+9 indexOf
+10 lastIndexof()
+
+
+
+
+
+
+
+
+
+
+
+
+
+[14:57] Priti Dalvi (Guest)
+package datedemo;
+
+import java.util.Date;
+
+import java.time.*; public class DateClass {​​​​​     public static void main(String[] args) {​​​​​
+
+//                Date d=new Date();
+
+//                System.out.println(d.toString());  //date and time     LocalDateTime t1=LocalDateTime.now();
+
+    System.out.println(t1);  //date and time
+
+    //display the monht , date, yr , sec
+
+    LocalDate date1=t1.toLocalDate();
+
+    System.out.println(date1);  //yr month date
+
+    System.out.println("month " +t1.getMonth());  
+
+    System.out.println("sec " + t1.getSecond());
+
+    System.out.println(" min " +t1.getMinute());
+
+    System.out.println(" yr " +t1.getYear());
+
+    System.out.println("day is " + t1.getDayOfYear());
+
+    }​​​​​ }​​​​​
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[15:25] Priti Dalvi (Guest)
+Generics:
+
+it allows to write  single sum() method that to calcuate the sum of the elements in an Integer array, Float array, Double array ... it has the type parameter
+
+it has the return type
+
+type casting is not required 
+
+--why generics
+
+avoid rewriting the program if the datatype of the parameters are changed --eg
+
+coffee mug 
+
+int[] num= {​​​​​1,2,4,6,8,9}​​​​​;
+
+float[] fnum= {​​​​​1.9f,2.4f,4.7f,6.4f,8.7f,9.6f}​​​​​;
+
+double[] dnum= {​​​​​16,66,66,56,81,91}​​​​​;     
+
+//will calculate total of integer arr
+
+sum(num)
+
+{​​​​​
+
+..
+
+.. }​​​​​ //will calculate total of float arr
+
+sum(fnum)
+
+{​​​​​
+
+..
+
+..
+
+}​​​​​ //
+
+//will calculate total of double arr
+
+sum(num)
+
+{​​​​​
+
+..
+
+..
+
+}​​​​​ ======================>1 method is enough in generics --eg
+
+    public <E> void printArray(E[] inputArray) {​​​​​ 1  <E>  :         return type   : int, float, double 
+
+2  E[]   :         : parameter           for (E i : inputArray) {​​​​​
+
+            System.out.println(i);
+
+        }​​​​​
+
+    }​​​​​
+
+
+
+
+
+Package genercispack;
+ 
+public class GenericDemo {
+    public <E> void printArray(E[] inputArray) {
+        for (E i : inputArray) {
+            System.out.println(i);
+        }
+    }
+/*
+ *     public <E> void printArray(E[] inputArray) {
+ 
+1  <E>  :         return type   : int, float, double 
+2  E[]   :         : parameter 
+ 
+ */
+    public static void main(String[] args) {
+        Integer[] intarr = { 22, 44, 55, 66, 77 };
+ 
+        GenericDemo obj = new GenericDemo();
+        System.out.println("printing the integer array");
+        obj.printArray(intarr);  //para : integer
+ 
+        System.out.println("----------------------------------------------");
+        System.out.println("print float array");
+ 
+        Float[] arrf = { 22.6f, 44.6f, 55.6f, 66.676f, 77.8787f };
+        obj.printArray(arrf); //para : float 
+
+        System.out.println("----------------------------------------------");
+        System.out.println("print double array");
+        Double[] d= {565.2,55.5,88.6, 88.43, 55.22, 77.21,88.33, 34.99};
+        obj.printArray(d); 
+ 
+    }
+ 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[15:46] Priti Dalvi (Guest)
+100 empno 
+
+array best sol : 100 values 200 --limitations of array :
+
+1 homogeneous collection / same data type
+
+2 size is fixed
+
+3 no readymade functions available ,programmer , we need to write the code for : sorting , display, traversal, adding ele, delete ele
+
+4 no standstard dat structure used in the industry --collection 
+
+--what is collecition
+
+it is collection of object
+
+    10  , 20.3 , 989.9 , "pr", emp1, custobj   --why collection
+
+1 readymade methods are available eg : searching, adding the ele, deleting the ele, 
+
+  traversal ele, 
+
+2 collection are growable in nature
+
+3 we can store homogeneous and hetergeneous objects
+
+    10  , 20.3 , 989.9 , "pr", emp1, custobj
+
+    int   float , double  st   obj   obj
+
+4 it provides readymade interfaces
+
+5 we can manipulate the obj what collection framework?
+
+provides interfaces and classes
+
+readymade methods will be provided 
+
+100 student : collection
+
+college  : collection framework 
+
+    issue book
+
+    admission 
+
+    withdraw adm
+
+=================
+
+acc holder     1000    : collecition framework  :    services
+
+    using the atm
+
+    apply the chequebook
+
+    loanapply
+
+    withdraw..
+
+    .... 
+
+
+
+
+
+
+
+[16:13] Priti Dalvi (Guest)
+package collecitonpack; import java.util.*; public class Collection1 {​​​​​     public static void main(String[] args) {​​​​​
+
+        List employees = new ArrayList();
+
+        // p child
+
+        employees.add("Arka"); // st
+
+        employees.add("dhya"); // st
+
+        employees.add(20); // in
+
+        employees.add(8989.66f); // f
+
+        employees.add(87.44); // d         // to display
+
+        for (int i = 0; i < employees.size(); i++) {​​​​​
+
+            System.out.println(employees.get(i));
+
+        }​​​​​         System.out.println("==============================");
+
+        // 2nd method
+
+        Iterator itr = employees.iterator(); // returns teh iterator object         while (itr.hasNext()) // return : true false
+
+        {​​​​​
+
+            System.out.println(itr.next()); // return the next value
+
+        }​​​​​         employees.add("sudeepa");
+
+        // employees.remove("sudeepa");         System.out.println("==========================");
+
+        System.out.println("added new ele ");
+
+        for (int i = 0; i < employees.size(); i++) {​​​​​
+
+            System.out.println(employees.get(i));
+
+        }​​​​​         System.out.println("=s==========================");
+
+        System.out.println("index is " + employees.indexOf("sudeepa"));
+
+        System.out.println(employees.contains("sudeepa"));         employees.isEmpty();         employees.remove(2); // 3rd ele will be removed
+
+        employees.clear(); // clear all ele         employees.isEmpty(); // true or false
+
+        //4.30  pm 
+
+    }​​​​​ }​​​​​
+
+
+
+
+
+
+[16:34] Priti Dalvi (Guest)
+package collecitonpack; public class Emp {​​​​​
+
+    private int empno;
+
+    private String ename;
+
+    //constructor , to sting , getter setter
+
+    public Emp(int empno, String ename) {​​​​​
+
+        super();
+
+        this.empno = empno;
+
+        this.ename = ename;
+
+    }​​​​​     
+
+    public int getEmpno() {​​​​​
+
+        return empno;
+
+    }​​​​​ 
+
+    public void setEmpno(int empno) {​​​​​
+
+        this.empno = empno;
+
+    }​​​​​ 
+
+    public String getEname() {​​​​​
+
+        return ename;
+
+    }​​​​​ 
+
+    public void setEname(String ename) {​​​​​
+
+        this.ename = ename;
+
+    }​​​​​ 
+
+    @Override
+
+    public String toString() {​​​​​
+
+        return "Emp [empno=" + empno + ", ename=" + ename + "]";
+
+    }​​​​​
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+package collecitonpack;
+ 
+import java.util.ArrayList;
+import java.util.List;
+ 
+public class ArrayList2 {
+ 
+    public static void main(String[] args) {
+        List<Emp> employees = new ArrayList<Emp>();
+
+        //collections of emp objec ts
+        Emp emp1=new Emp(1, "pr");
+        Emp emp2=new Emp(2, "priya");
+        Emp emp3=new Emp(3, "priti");
+        Emp emp4=new Emp(4, "ram");
+        Emp emp5=new Emp(5, "yogesh");
+
+        //to add the objs in collection
+        employees.add(emp1);
+        employees.add(emp2);
+        employees.add(emp3);
+        employees.add(emp4);
+        employees.add(emp5);
+    }
+ 
+}
+
+
+=========================================================================================================================
+
+
+[17:21] Priti Dalvi (Guest)
+-JDBC
+
+java database connectivity
+
+--used in java 
+
+-ODBC
+
+open database connectivity
+
+used .net emp
+
+empno     ename     sal
+
+1    pp    989
+
+2    kk    9090
+
+3    hh    9898         JDBC
+
+java code ----------------------------------> Oracle(Emp)  10 rec
+
+        Driver  =================================================================================
+
+front end 
+
+    java, python, .net , vb.net, asp.net
+
+    forms , report , payslip  
+
+backend     : database
+
+        ORacle, ms sql, mysql, postgreSQL
+
+        all the data is stored 
+
+--eg
+
+name
+
+add
+
+m 
+
+submit 
+
+=============================
+
+JDBC
+
+java database connectivity
+
+used to connect java with oracle
+
+we connect using the driver what is a driver
+
+it is software to connect to the db
+
+divers are used to implement the interfaces
+
+for every database we have diff dirver  
+
+--steps
+
+1 establish the connection
+
+2 create a statement
+
+3 execute the query
+
+4 process the resultset
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[17:54] Priti Dalvi (Guest)
+ try {​​​​​//load the driver in the memory
+
+           Class.forName("oracle.jdbc.driver.OracleDriver");
+
+        Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","hr","hr");
+
+           //1  : type of the driver, port number and service name
+
+           //2  : username
+
+           //3    : password
+
+        System.out.println("connection is successful!!!");
+
+       }​​​​​
+
+       catch(Exception e)
+
+       {​​​​​
+
+            System.out.println(e);
+
+       }​​​​​
+
+
+​​​​​
+
+
+
+
+METHODS RELATED TO rs OBJECT:
+-----------------------------
+
+resultSet methods:
+rs.next();
+rs.getInt(1);
+rs.getInt(“age”);
+rs. getString(“name”);
+ rs. getBigDecimal ();
+rs.getBoolean(int);
+rs.getBoolean(string);
+rs.getDate(string);
+rs.getDate(int);
+rs.getTime(int);
+rs. getTime (string);
+rs.getFloat(int);
+rs.getFloat(string);
+rs.getLong(string);
+rs.getLong(int);
+rs.getShort(int); 
+rs.getShort(String);
+rs.getByte(int); 
+rs.getByte(String);
+rs.getWarnings();
+rs.clearWarnings()
+rs.getMetaData()
+rs.findColumn(string)
+rs.getArray(int i)    :returns an Array object that contains the value of the database column in the current row of the ResultSet object.
+
+
+
+
+
+
+
+
+
+
+
+[19:02] Priti Dalvi (Guest)
+package jdbc; import java.sql.Connection;
+
+import java.sql.DriverManager;
+
+import java.sql.ResultSet;
+
+import java.sql.Statement; 
+
+public class updatedemo {​​​​​
+
+    public static void main(String[] args) {​​​​​
+
+         try {​​​​​
+
+             Class.forName("oracle.jdbc.driver.OracleDriver");  //loads the driver in the memory
+
+            Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","hr","hr");
+
+            System.out.println("connection is successful!!!");
+
+            String str1="insert into emp3 values(4,'ketan', 60000)";
+
+            //String str1="delete from emp3 where empno=3";
+
+            //String str1="update emp3 set ename='mohanraj' where empno=3";
+
+            Statement stmt=con.createStatement();
+
+            stmt.executeUpdate(str1);
+
+            con.close();
+
+         }​​​​​
+
+         catch(Exception e)
+
+         {​​​​​
+
+             System.out.println(e);
+
+         }​​​​​         }​​​​​ }​​​​​
+

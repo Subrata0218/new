@@ -1,0 +1,725 @@
+Question 1 )	Write a program to print number from 1 to 10.
+-------------------------------------------------------------
+
+package module7;
+
+public class WhileDemo {
+
+	public static void main(String[] args) {
+		int a=1;
+		while(a<=10)
+		{
+			System.out.println(a);
+			a++;
+		}
+		
+
+	}
+
+}
+
+
+Question 2) 	Write a program to calculate the sum of first 10 natural number.
+---------------------------------------------------------------------------------
+
+package module7;
+
+public class ForDemo {
+
+	public static void main(String[] args) {
+		int a=1,b=10,c=0;
+		
+		for(a=1;a<=b;a++)
+		{
+			c=c+a;
+			
+		}
+		System.out.println(c);
+
+	}
+
+}
+
+Question 3) 	Write a program to find the factorial value of any number entered through the keyboard.
+--------------------------------------------------------------------------------------------------------
+
+import java.util.Scanner;
+public class ForDemo {
+	private int factnum;
+	Scanner sc=new Scanner(System.in);
+	public void accept()
+	{
+	System.out.println("Enter the Number to find the Factorial");
+	factnum=sc.nextInt();
+	}
+	
+	public void display()
+	{
+		int factorial=1;
+		while(factnum>1)
+		{
+			factorial=factorial*factnum;
+			factnum--;
+		}
+		System.out.println(factorial);
+	}
+	public static void main(String[] args) {
+ForDemo fact=new ForDemo();
+			fact.accept();
+			fact.display();
+
+	}
+	
+
+}
+
+Question 4) 	Two numbers are entered through the keyboard. Write a program to find the value of one number raised to the power of another.
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+package module7;
+
+import java.util.Scanner;
+
+public class Power {
+	
+	Scanner sc=new Scanner(System.in);
+
+	private int a;
+	private int b;
+	
+	public void accept()
+	{
+		System.out.println("Enter the first number");
+		a=sc.nextInt();
+		System.out.println("Enter the Exponent Value");
+		b=sc.nextInt();
+	}
+	
+	public void display()
+	{
+		double result=Math.pow(a, b);
+		System.out.println("Value is : "+result);
+	}
+	
+	public static void main(String[] args) {
+		
+		Power pow=new Power();
+		pow.accept();
+		pow.display();
+		
+
+	}
+
+}
+
+ 
+Question 5 	Write a program to reveres any given integer number.
+
+package module7;
+
+import java.util.Scanner;
+
+
+public class Reverse {
+	Scanner sc=new Scanner(System.in);
+	private int  a;
+	
+	public void accept()
+	{
+		System.out.println("Enter the Number");
+		a=sc.nextInt();
+	}
+	public void display()
+	{
+		int b=0;
+		while(a!=0)
+		{
+			int c=a%10;
+			b=b*10+c;
+			
+			a /= 10;
+			
+		}
+		System.out.println("Reversed Number : "+ b);
+	}
+	
+	
+	
+
+	public static void main(String[] args) {
+		Reverse rev=new Reverse();
+		rev.accept();
+		rev.display();
+
+	}
+
+}
+
+Question 6 	Write a program to sum of digits of given integer number.
+package module7;
+
+import java.util.Scanner;
+
+
+public class Sum {
+	private int a;
+	private int b;
+	
+	Scanner sc=new Scanner(System.in);
+	public void accept()
+	{	
+		System.out.println("Enther the 1st Number");
+		a=sc.nextInt();
+		System.out.println("Enther the 2nd Number");
+		b=sc.nextInt();
+	}
+	
+	public void display()
+	{	
+		int c=a+b;
+		System.out.println("Sum of the numbers are ");
+		System.out.println(c);
+		
+	}
+
+	public static void main(String[] args) {
+		
+		Sum s=new Sum();
+		s.accept();
+		s.display();
+
+	}
+
+}
+
+Question 7 	Write a program to check given number is prime or not.
+
+import java.util.Scanner;
+
+public class Prime {
+	
+	Scanner sc=new Scanner(System.in);
+	
+	private int a;
+	private boolean b;
+	
+	public void accept() {
+		System.out.println("Enter The Number");
+		a=sc.nextInt();
+	}
+	
+	public void display()
+	{
+		for(int i=2;i<=a;++a)
+		{
+			if(a%i==0) {
+				b=true;
+				break;
+			}
+		}
+		if(b)
+			System.out.println(a + " is a prime number");
+		else
+			System.out.println(a + " is not a prime number");	
+	}
+
+	public static void main(String[] args) {
+		
+		Prime p=new Prime();
+		p.accept();
+		p.display();
+
+	}
+
+}
+
+Question 9	Write a program to enter the numbers till the user wants and at the end it should display the count of positive, negative and zeros entered. 
+
+import java.util.Scanner;
+
+public class Count {
+
+	public static void main(String[] args) {
+		
+		Scanner sc=new Scanner(System.in);
+		
+		int number;
+		int positive = 0;
+		int negative=0;
+		int zero=0;
+		
+		char c;
+		
+		do
+		{
+			System.out.println("Enter the Number");
+			number=sc.nextInt();
+			if(number>0)
+			{
+				positive++;
+			}
+			else if(number<0)
+			{
+				negative++;
+			}
+			else
+			{
+				zero++;
+			}
+			
+			System.out.print("Do you want to continue y/n? ");
+            c = sc.next().charAt(0);
+			
+		}while(c=='y' || c=='Y');
+		
+		System.out.println("Positive numbers: " + positive);
+        System.out.println("Negative numbers: " + negative);
+		
+
+	}
+
+}
+
+Question 10	Write a program to enter the numbers till the user wants and at the end it should display the maximum and minimum number entered. 
+
+package module7;
+
+import java.util.Scanner;
+
+public class Max {
+
+	public static void main(String[] args) {
+		
+			
+			Scanner sc=new Scanner(System.in);
+			
+			int number;
+			int max = Integer.MIN_VALUE;
+			int min =Integer.MAX_VALUE;
+			
+			
+			char c;
+			
+			do
+			{
+				System.out.println("Enter the Number");
+				number=sc.nextInt();
+				if(number>max)
+				{
+					max=number;
+				}
+				if(number<min)
+				{
+					min=number;
+				}
+				
+				
+				System.out.print("Do you want to continue y/n? ");
+	            c = sc.next().charAt(0);
+				
+			}while(c=='y' || c=='Y');
+			
+			System.out.println("Maximun numbers: " + max);
+	        System.out.println("Minimum numbers: " + min);
+			
+
+		}
+
+	
+
+	}
+
+
+
+Get the following pattern
+a)
+*
+***
+*****
+*******
+
+
+public class Pattern {
+
+	public static void main(String[] args) {
+		int i,j,r=4;
+		for(i=0;i<r;i++)
+		{
+			for(j=i;j<r;j++)
+			{
+				System.out.println(" ");
+			}
+			for(j=0;j<=2*i;j++)
+			{
+				System.out.println("* ");
+			}
+			System.out.println();
+		}
+
+	}
+
+}
+
+
+b)
+1
+222
+33333
+4444444
+
+package module8;
+
+public class Pattern {
+
+	public static void main(String[] args) {
+		
+		for(int i=1;i<5;i++)
+		{
+			for(int j = i;j<5;j++) {
+				System.out.print(" ");
+			}
+			for(int j=1;j<=i*1.5;j++)
+			{
+				System.out.print(i+" ");
+			}
+			System.out.println();
+		}
+		
+
+	}
+
+}
+
+
+
+c)
+1
+11
+111
+1111
+11111
+
+
+int i,j,r=4;
+		for(i=0;i<r;i++)
+		{
+			for(j=0;j<=i;j++)
+			{
+				System.out.println(" ");
+			}
+			for(j=0;j<=i;j++)
+			{
+				System.out.println("1 ");
+			}
+			System.out.println();
+		}
+
+
+
+
+===============================================================JAVA ASSIGNMENT-2=========================================================================
+
+Q.1=
+
+package assignment2;
+import java.util.Scanner;
+public class Addition {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int a,b,result;
+		
+		System.out.println("Enter Two Integers");
+		a=sc.nextInt();
+		b=sc.nextInt();
+		result=(a+b);
+		
+		System.out.println("Total = "+result);
+
+	}
+
+}
+=============================================================================
+
+Q.2=
+
+package assignment2;
+import java.util.Scanner;
+public class Q2Discount {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int[] num=new int[5];
+		System.out.println("Enter 5 integers");
+		
+		int i;
+		int total=0;
+		for(i=0;i<5;i++) {
+			num[i]=sc.nextInt();
+			
+			total=total+num[i];
+		}
+		System.out.println("Total="+total);
+		
+		double ftotal=total-(total*0.10);
+		System.out.println("10% Discount on Total="+(total*0.10));
+		System.out.println("Final total After 10% Discount="+ftotal);
+	}
+
+}
+
+===================================================================================================
+
+Q.3
+A-Number class
+
+package assignment2;
+import java.util.Scanner;
+
+public class Number {
+	private int numOne;
+	private int numTwo;
+	private int result;
+	
+	Scanner sc=new Scanner(System.in);
+	
+	public void acceptNumbers() {
+		
+		numOne=sc.nextInt();
+		numTwo=sc.nextInt();
+	}
+	
+	public void calResult() {
+		result=numOne+numTwo;
+	}
+	
+	public void displayTotal() {
+		System.out.println("The total result is="+result);
+		
+	}
+}
+
+------------------------------------------------------------------------
+
+B-TestNumber Class
+
+package assignment2;
+
+public class TestNumber {
+
+	public static void main(String[] args) {
+		Number num=new Number();
+		System.out.println("Enter two integers");
+		num.acceptNumbers();
+		num.calResult();
+		num.displayTotal();
+	}
+
+}
+
+======================================================================================================================================
+
+Q.4
+
+package assignment2;
+
+public class Q4Name {
+	 public static void main(String[] args) {
+		 System.out.println("SUBRATA RISHI");
+		 System.out.println("North 24 Parganas");
+		 System.out.println("7001364210");
+		 
+	 }
+}
+	
+===========================================================================================================
+
+Q.5
+
+package assignment2;
+import java.util.Scanner;
+public class Circle {
+	private int radius;
+	private double area;
+	private final float PI=3.14f;
+	
+	Scanner sc=new Scanner(System.in);
+	
+	public void accept() {
+		radius=sc.nextInt();
+	}
+	
+	public void calArea() {
+		area=PI*radius*radius;
+	}
+	
+	public void displayArea() {
+		System.out.println("Area of circle is="+area);
+	}
+	
+	public static void main(String[] args) {
+		Circle c=new Circle();
+		System.out.println("Enter the Radius");
+		c.accept();
+		c.calArea();
+		c.displayArea();
+		
+	} 
+}
+
+=====================================================================================================
+
+Q.6
+
+
+package assignment2;
+import java.util.Scanner;
+public class Switchcase {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Eter your choice between 1 to 7");
+		int ch=sc.nextInt();
+		
+		switch(ch)
+		{
+		case 1:
+			System.out.println("It is Holiday !");
+			break;
+		case 2:
+			System.out.println("It is a working day");
+			break;
+		case 3:
+			System.out.println("It is a working day");
+			break;
+		case 4:
+			System.out.println("It is a working day");
+			break;
+		case 5:
+			System.out.println("It is a working day");
+			break;
+		case 6:
+			System.out.println("It is a working day");
+			break;
+		case 7:
+			System.out.println("It is a Funday");
+			break;
+		default:
+			System.out.println("Please enter Valid Choice !!!");
+			break;
+			
+		}
+	}
+
+}
+
+====================================================================================================================
+
+Q.7
+
+package assignment2;
+import java.util.Scanner;
+public class Factorial {
+
+	public static void main(String[] args) {
+		int a;
+		int fact=1;
+		Scanner sc=new Scanner(System.in);
+		
+		System.out.println("Enter the integer");
+		a=sc.nextInt();
+		for(int i=1;i<=a;i++) 
+		{
+			fact=fact*i;
+		}
+		System.out.println("Factorial="+fact);
+
+	}
+
+}
+
+================================================================================================================================
+
+Q.8.
+
+
+================================================================================================================================
+
+9.)
+
+package assignment2;
+
+import java.util.Scanner;  
+public class While
+{  
+public static void main(String[] args)   
+{  
+int number, i;  
+Scanner sc=new Scanner(System.in);  
+System.out.print("Enter the limit: ");  
+i=sc.nextInt();
+number = sc.nextInt();    
+   
+System.out.print("List of even numbers: "); 
+while(i<=number)  
+{  
+if(i%2==0)
+System.out.print(i +" ");    
+i++;  
+}     
+}  
+}
+
+
+10. create the following structure using for loop
+
+*
+**
+***
+****
+*****
+
+public class Pattern {
+
+	public static void main(String[] args) {
+		int i,j,r=5;
+		for(i=0;i<r;i++)
+		{
+			for(j=i;j<r;j++)
+			{
+				System.out.println(" ");
+			}
+			for(j=0;j<=i;j++)
+			{
+				System.out.print("* ");
+			}
+			System.out.println();
+		}
+
+==
+11)
+
+public class reverseArray {
+  
+    static void reverse(int a[], int n)
+    {
+        int[] b = new int[n];
+        int j = n;
+        for (int i = 0; i < n; i++) {
+            b[j - 1] = a[i];
+            j = j - 1;
+        }
+  
+        // printing the reversed array
+        System.out.println("Reversed array is: \n");
+        for (int k = 0; k < n; k++) {
+            System.out.println(b[k]);
+        }
+    }
+  
+    public static void main(String[] args)
+    {
+        int [] arr = {10, 20, 30, 40, 50, 60, 70};
+        reverse(arr, arr.length);
+    }
+}

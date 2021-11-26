@@ -1,0 +1,122 @@
+--loops
+1 while 
+2 do while
+3 for 
+ 
+--do while
+do{
+..
+..
+..
+}while(condition);
+ 
+--while
+while(condition)
+{
+..
+..
+}
+ 
+--for 
+for(1,2,3)
+{
+..
+}
+ 
+1  : initialization 
+2  : condition
+3  : increemnt / decrement 
+
+
+
+
+
+
+
+
+
+package module3;
+import java.util.Scanner;
+ 
+public class DoWhileDemo2 {
+ 
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+
+        int ch;
+        String choice;
+
+        do {
+        System.out.println("ICICI Bank");
+        System.out.println("1. Accept details ");
+        System.out.println("2. Display details ");
+        System.out.println("3. Withdraw amount");
+        System.out.println("4. Deposit amount");
+        System.out.println("5. Check Balance");
+        System.out.println("6. Tranfer amount");
+        System.out.println("7. Exit");
+        System.out.println("Enter your choice");
+
+        ch=sc.nextInt();
+
+        switch (ch)
+        {
+        case 1 :
+            System.out.println("Accepting the  details ");
+            break;
+        case 2 :
+            System.out.println("Displaying the  details ");
+            break;
+        case 3 :
+            System.out.println("Calling the withdraw method ");
+            break;
+        case 4 :
+            System.out.println("Calling the deposit method ");
+            break;
+        case 5 :
+            System.out.println("Check the balance");
+            break;
+        case 6 :
+            System.out.println("Calling the transfer method  ");
+            break;
+        case 7 :
+            System.exit(0);
+            break;
+        default :
+            System.out.println("invalid input");
+            break;
+
+        }
+
+          System.out.println("Do you want to continue (Y/ N)?");
+            choice=sc.next();
+        }while(choice.equals("Y") || choice.equals("y"));
+
+
+
+    }
+ 
+}
+
+
+
+
+Object class :
+every class in java is directly or indirectly derived from the Oject class
+the parent class will be always Object class for which ever class we are creating
+ 
+methods of object class
+1 toString()    : used to convert the object to string
+2 equals()    : to compare the object
+3 notify()
+4 notifyAll()
+5 wait()
+6 clone()
+7 finalized()    : to dispose the system resources
+8 getClass()    : returns the class object of "this" object
+9 hashCode()    : return the memory address 
+
+
+
+
+

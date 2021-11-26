@@ -1,0 +1,17 @@
+Client : West Bengal Government 
+Application : Government Healthcare Application
+It company : LTI
+Requirement Details : Live Tracking .To Have A record of how many peoples are vaccinated, There should be seprated icons to get informations about All The Hospitality Services Available , information abut where The vaccination is ging on on a specific date. And MAny more.
+
+Requirement Analysis : So The QA Team Will Analise That All The functions Are working properly And There Shoiuld be no bug.
+Raising A Query.
+
+Test Planning :
+Start Date : 08/11/2021
+End Date : 10/11/2021
+ 1)To check It Is showing The Real time Records Or Not.
+2)To Check every Buttons Doing Their Jobs or not.
+3) To Check It Gives Us lIve lOcations Or Not.
+
+Enviromental Setup : Os : Windows.
+Application Os : Android , IOS.

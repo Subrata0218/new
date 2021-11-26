@@ -1,0 +1,10 @@
+Agile Is A methodology To Acheive Agile We Use Scrum Method 
+Test Plan :
+1)Master Test Plan :Which Includes A Complete test Strategy Which go through multipke levels of testing.
+
+ 2)Phase Test Plan: Which Address Only A Phase Of The Testing Strategy.
+ex : A list Of Tools , A List Of Test Cases.
+
+3) Specific Test Plan : Which Includes only Major Type Of Testing Like Security Testing , Load testing , Performance Testing  , In Other Words Specific Test Plan Designed For Non-Functional Testing.
+
+ 

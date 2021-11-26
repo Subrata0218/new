@@ -1,0 +1,413 @@
+[11:09] Priti Dalvi (Guest)
+public static void main(String[] b) {​​​​​ 1. removed the static 
+
+compile : success
+
+runtime : err 2. args--> changed to a
+
+args : name of the variable array compile : success
+
+runtime :  success 3. String[] args ---------> int[] args
+
+compile : success
+
+runtime  :  err 4. String[] args---------> changed to String args[]
+
+compile : success
+
+runtime :  success 5. int main(String args[])
+
+compile : success
+
+runtime :  err
+
+[11:12] Priti Dalvi (Guest)
+==
+
+[11:12] Priti Dalvi (Guest)
+
+
+public static void main(String[] b) {​​​​​
+
+public   : access specifier  : everyone can access
+
+void : not returning anything
+
+main()    : name of the method : entry point of the prog
+
+String[] args  : argument for the main method
+
+    runtime arg can be given, args-- name of the array
+
+static : we need not have to create an object of the class , to access the method
+
+[11:12] Priti Dalvi (Guest)
+
+
+public static void main(String[] b) {​​​​​
+
+public   : access specifier  : everyone can access
+
+void : not returning anything
+
+main()    : name of the method : entry point of the prog
+
+String[] args  : argument for the main method
+
+    runtime arg can be given, args-- name of the array
+
+static : we need not have to create an object of the class , to access the method
+
+[11:44] Priti Dalvi (Guest)
+==
+
+[11:44] Priti Dalvi (Guest)
+    public static void main(String[] args)    {​​​​​
+
+        int eno=100;
+
+        String ename="Parikshit";
+
+        float sal1=50000.90f;     //1
+
+        float sal2=(float)8989.89;   //2 type casting
+
+        double comm=1000.66;
+
+        //display the values
+
+        System.out.println("empno is " + eno);
+
+        System.out.println("ename is " + ename );
+
+        System.out.println("salary is " + sal1);
+
+        System.out.println("salary2  is " + sal2);
+
+        System.out.println("commission  is " + comm);
+
+        //file display name string  , college string , score double , int rollno  : VarDeclaration2
+
+    }​​​​​
+
+
+                  data types
+                      |
+        ------------------------------------------
+        |                                         |
+    primitive                                 reference
+        |
+--------------                                 1.array
+|            |                              2. collection
+numeric   non numeric                       -enumeration
+byte      char                              -Vector
+short    boolean                            -Stack
+int                                         -Queue
+long                                        3. String
+float                                       4. Class 
+double
+ 
+---
+boolean
+ 
+
+a Type    Size    Description
+byte    1 byte    Stores whole numbers from     -128 to 127  
+short    2 bytes    Stores whole numbers from     -32,768 to 32,767
+int    4 bytes    Stores whole numbers from     -2,147,483,648 to 2,147,483,647
+long    8 bytes    Stores whole numbers from     -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+float    4 bytes    Stores fractional numbers. Sufficient for storing 6 to 7 decimal digits
+double    8 bytes    Stores fractional numbers. Sufficient for storing 15 decimal digits
+boolean    1 bit    Stores true or false values
+char    2 bytes    Stores a single character/letter or ASCII values
+
+
+
+
+
+
+
+
+
+class
+blue print , from which the objects are created
+template, prototype 
+collection of all the objects.
+collection of attributes and the methods
+ 
+ 
+class                  Car    attributes/mv/state : color, modelno, price
+              |     method/ mf/ behaviour : start(), stop(), apply_g()
+              |
+         --------------------------------------------------------
+        |                              |                       |
+objects        HondaCity             BMW                     i10    
+        color="white"         color="black"            color="grey"
+        modelno=1        modelno=2            modelno=3
+        price=1200000        price=9000000            price=1200000
+ start(), stop(), apply_g()    start(), stop(), apply_g()       start(), stop(), apply_g()
+ 
+100 objects  : mv, mf
+ 
+--to create a object
+Car  HondaCity=new Car();
+C     obj           c
+ 
+Car BMW=new Car();
+Car i10=new Car();
+..
+..
+ 
+====================================
+
+
+
+
+Student class
+    //mv / state/ attributes / instance variables
+    fname
+    roll
+    lname
+    address
+    mobile
+    pan
+
+    //mf, method, behaviours
+    writing()
+    appearExam()
+    solveAssign()
+    study()
+    markAttendance()
+    checkResult()
+
+
+
+
+
+SmartPhone:
+Mv/arrtribute/state
+      |
+colour
+space
+ram
+battery
+megapixles
+ Mf/method/behaviour
+      |
+clicking photos
+playing games
+playing music
+mking docs
+watching movies
+
+
+
+
+
+
+
+
+package module1;
+ 
+public class Emp {
+    private int empId;  //mv
+    private double sal;  //mv
+
+    public void accept() {
+        System.out.println("this is accept method");
+    }
+
+    public void display() {
+        System.out.println("this is display method ..");
+    }
+
+    public static void main(String[] args) {
+        Emp obj=new Emp();
+        obj.accept();
+        obj.display();
+
+        System.out.println("============================");
+        System.out.println("Creating 2nd obj");
+        Emp obj2=new Emp();
+        obj2.accept();
+        obj2.display();
+
+        System.out.println("============================");
+        System.out.println("Creating 3rd obj");
+        Emp obj3=new Emp();
+        obj3.accept();
+        obj3.display();
+
+    }
+ 
+}
+
+
+
+
+============================================================
+
+
+---------------------access specifer---------------------------
+1 private         : accessible only with in the same class
+2 protected         : accessible in the same class, and the child classes
+ 
+3 default        : if not written anything 
+            : it is accessible in the other classes in the same package
+4 public        : is is accessible in any classes , inside the same package and the other packages
+
+
+
+
+package module2;
+import java.util.Scanner;  //1
+ 
+
+public class Student1 {
+    private int rollNo;  
+    private String name;  
+    private double score;
+
+    Scanner sc=new Scanner(System.in);   //2
+
+    public void accept()
+    {
+        System.out.println("enter the rollno ");
+        rollNo=sc.nextInt();   //3
+
+        System.out.println("enter the name ");
+        name=sc.next();
+
+        System.out.println("enter the score");
+        score=sc.nextDouble();
+    }
+ 
+    public void display() {  
+        System.out.println("rollno is "+ rollNo  + " name is " + name + " score is " + score);    
+    }
+
+}
+
+
+
+package module2;
+ 
+public class TestStudent1 {
+ 
+    public static void main(String[] args) {
+        Student1 student1=new Student1();
+        student1.accept();
+        student1.display();
+
+        System.out.println("=====================================");
+        System.out.println("Creating second obj");
+        Student1 student2=new Student1();
+        student2.accept();
+        student2.display();
+
+        System.out.println("=====================================");
+        System.out.println("Creating third obj");
+        Student1 student3=new Student1();
+        student3.accept();
+        student3.display();
+
+
+    }
+ 
+}
+
+[16:34] Omkar Bakshi
+package module2;import java.util.Scanner;public class Emp {
+private int empId; //mv
+private String name;
+private double sal; //mv
+Scanner sc=new Scanner(System.in);
+public void accept() {
+System.out.println("enter the employee id ");
+empId=sc.nextInt(); //3 System.out.println("enter the name ");
+name=sc.next(); System.out.println("enter the salary");
+sal=sc.nextDouble();
+}
+public void display() {
+System.out.println("Employee id number is " + empId + " name is " + name + " salary is "+sal);
+}
+}
+
+[16:38] Priti Dalvi (Guest)
+--shortcut
+
+ctrl + /     : comment
+
+ctrl + /     : uncomment
+
+ctrl + f11    : run
+
+ctrl + shift + f : format
+
+ctrl + space + sys
+
+[16:43] Priti Dalvi (Guest)
+package module2; public class TestEmp {​​​​​     public static void main(String[] args) {​​​​​
+
+        Emp emp=new Emp();
+
+        emp.accept();
+
+         System.out.println("============================");
+
+        System.out.println("calling the display method");
+
+        emp.display();
+
+        System.out.println("===============================");
+
+        System.out.println("Creating second object");
+
+        Emp emp2=new Emp();
+
+        emp2.accept();
+
+        emp2.display();
+
+    }​​​​​ }​​​​​
+
+[16:45] Priti Dalvi (Guest)
+package module2; import java.util.Scanner; class Emp {​​​​​
+
+    private int empId; // mv
+
+    private String empName;
+
+    private double empSal; // mv     Scanner sc = new Scanner(System.in);     public void accept() {​​​​​
+
+        System.out.println("enter the empid , name , salary");
+
+        empId = sc.nextInt();
+
+        empName = sc.next();
+
+        empSal = sc.nextDouble();
+
+    }​​​​​     public void display() {​​​​​
+
+        System.out.println("empid is " + empId);
+
+        System.out.println("name is " + empName);
+
+        System.out.println("salary is " + empSal);
+
+    }​​​​​
+
+}​​​​​
+
+=============================================================
+
+
+-default values
+int     : 0
+String     : null
+boolean    : false
+short, byte, long     : 0
+object reference     : null
+
+

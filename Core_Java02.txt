@@ -1,0 +1,398 @@
+[09:30] Priti Dalvi (Guest)
+a.java                                    -------------------------------->                                        a.class(given to jvm)                                                java compiler(javac)  JDK = Development Enviornment +JREJRE= JVM + Java Class LibraryOther classes = Utility classesJDK = javac compiler  +   .jar (libraries) +JRE + java debugger JVM : Java Virtual MachineIs a software that is platform specificJVM is different for different OS. We have JVM for Windows, JVM for Unix, JVM for Mac OS.JVM converts the byte code into machine language executable code. It has byte code verifier. It interprets the byte code ,  it converts the code into  executable code.The JVM performs the following main tasks:Loads codeVerifies codeExecutes codeProvides runtime environment JDK :  Java Development Kit.                Is a software package which is used to develop and deploy java applications. JDK is a compiler.  It is used to develop Java applications . The JDK contains a private Java Virtual Machine (JVM) and a few other resources such as an interpreter/loader (java), a compiler (javac), an archiver (jar), a documentation generator (Javadoc), etc. JRE: Java Runtime EnvironmentIs required to run java application. JRE has JIT(Just In Time) compier. JIT avoids the repeated translation  of the code which embedded in a loop, to make execution process fast. It perform the translation of such code and keep it in the memory for future use.It contains a set of libraries + other files that JVM uses at runtime.Javac : java complier is used to convert java code to a class file..jar : files has number of classes and interfaces
+
+========
+[09:43] Priti Dalvi (Guest)
+hierachy of access specifier
+
+1 private
+
+2 protected
+
+3 default
+
+4 public ---types of polymorphism
+
+1. static polymorphism
+
+    this can achieved by function overloadding
+
+    add(int a, int b)
+
+    add(float a, int b)
+
+    add(int a, float b)
+
+    add(float a, float b)
+
+    function overloadding  :    
+
+        name of the function is the same and the parameters are different 2. dynamic polymorphism
+
+    this can achieved by function overidding
+
+    runtime polymorphism
+
+
+
+2. dynamic polymorphism
+    this can achieved by function overidding
+    runtime polymorphism
+    --function overidding
+    the same name of the function in parent and child class present
+ 
+        parent class  --fun1()
+              |
+        child  class  --fun1()
+ 
+    can be achieve by abstract class and interfaces 
+    which function to be called is decided at runtime
+ 
+ 
+            Account  : mv : accno, name , bal
+             |     : mf: withdraw(){...}, deposit(){....}
+        --------------------------
+        |              |
+        Saving             Current
+    withdraw(){......}, deposit(){....}  |
+                    withdraw(){.......}, deposit(){........}
+
+
+
+
+--types of inheritance
+1. single level inheritance        : supported
+Class1            : parent
+   ^
+   |
+   |
+ Class2            : child 
+ 
+only one level , 1 parent class
+ 
+2. multi level inheritance        : supported
+ 
+Class1            : parent
+   ^
+   |
+   |
+ Class2            : child 
+   ^
+   |
+   |
+ Class3            : child 
+   ^
+   |
+   |
+ Class4            : child 
+ 
+3. multiple inheritance        : not supported
+    class1         Class2        : parent
+      |                   |
+      ---------------------
+         |
+         Class3            : child 
+ 
+4. hierarchical inheritance        : supported
+
+    Class1                : parent 
+          |
+  -----------------------------------
+  |                     |
+Class2                    Class3    : child
+
+5. hybrid inheritance        : not supported
+ 
+    Class1                : parent 
+          |
+  -----------------------------------
+  |                     |
+Class2                    Class3    
+ |                                   |
+ ------------------------------------
+                 |
+        Class4                : child
+
+it is combination of multiple inheritance and hierachical inheritance
+
+
+
+
+[10:15] Priti Dalvi (Guest)
+Process map diagram / type of memory
+
+1. Stack
+
+    store the variables crated and the values
+
+        LOCAL varibles , in main()
+
+        int eno=100;    //stack
+
+        String ename="Parikshit";   //stack
+
+        float sal1=50000.90f;     //1    //stack
+
+        float sal2=(float)8989.89;   //2 type casting   //stack 
+
+2. Heap
+
+    entire obj will be stored 
+
+    to store the obj we require both the memories
+
+    when we use the "new" keywork , the heap memory will be used     Emp emp1;      //stack   : object reference
+
+    emp1=new Emp();    //heap  : entire object is stored  3. Code
+
+    stores the member functions
+
+    display(){​​​​​...}​​​​​, accept(){​​​​​..}​​​​​ 4. Data
+
+    stores the static variable 
+
+    eg : PI, TAX
+
+
+
+
+============================================
+[10:19] Priti Dalvi (Guest)
+package module5; public class WrapperDemo {​​​​​     public static void main(String[] args) {​​​​​
+
+        String a="100";
+
+        String b="200";
+
+        int result=Integer.parseInt(a)+Integer.parseInt(b);
+
+        System.out.println("result is " + result);     }​​​​​ }​​​​​
+
+
+
+
+
+
+
+
+
+
+
+
+
+package module5;
+
+public class WrapperDemo {
+    public static void main(String [] args) {
+//    	String a = "1100";
+//    	String b = "2100";
+//    	int result=Integer.parseInt(a)+Integer.parseInt(b);
+//    	System.out.println("result is " + result);
+
+//    	         String a = "9.6";
+//    	String b = "7.4";
+//    	float res = float.parseFloat(a)+float.prseFloat(b);
+//    	Sstem.out.println(res);
+//    	 
+    }
+}
+
+
+=========================================================================
+
+
+
+[10:28] Priti Dalvi (Guest)
+==
+
+[10:28] Priti Dalvi (Guest)
+Wrapper classes
+
+to wrap the primitive data types in an object type classes                   primitive data type
+
+1. Integer        --> int
+
+2. Float        --> float
+
+3. Double         --> double
+
+4. Byte           --> byte
+
+5. Long         --> long ===methods of the Wrapper classes
+
+1.toString()
+
+2. hashCode()
+
+3. longValue()
+
+4. doubleValue()
+
+5. floatValue()
+
+6. equals()
+
+
+
+============================================================
+
+[10:48] Priti Dalvi (Guest)
+package module5; public class breakdemo {​​​​​     public static void main(String[] args) {​​​​​
+
+        for(int a=1; a<10; a++)
+
+        {​​​​​ 
+
+            if(a==5)
+
+                //break;  //1-4
+
+                continue;  //1,2,3,4,6,7,8,9
+
+            else
+
+                System.out.println(a);
+
+        }​​​​​     }​​​​​ }​​​​​
+
+
+========================================
+
+
+[10:51] Priti Dalvi (Guest)
+Array:
+
+  is a collection of data of the same data types
+
+  eg store 10 names of emp
+
+    store empno for 20 people --adv
+
+store at one location 
+
+using array will be faster --types
+
+1 single dimensinal
+
+2 multi dimensinal
+
+
+[10:58] Priti Dalvi (Guest)
+package module5;
+
+import java.util.Scanner; public class Arraydemo {​​​​​     public static void main(String[] args) {​​​​​
+
+        Scanner sc=new Scanner(System.in);
+
+        int[] num=new int[5];  //0 1 2 3 4
+
+        System.out.println("enter the 5 integer values ");
+
+        for(int i=0; i<5; i++)
+
+        {​​​​​
+
+            num[i]=sc.nextInt();
+
+        }​​​​​
+
+        //to display
+
+    }​​​​​ }​​​​​
+
+
+
+[11:06] Priti Dalvi (Guest)
+package module5;
+
+import java.util.Scanner; public class Arraydemo {​​​​​     public static void main(String[] args) {​​​​​
+
+        Scanner sc=new Scanner(System.in);
+
+        int[] num=new int[5];  //0 1 2 3 4
+
+        System.out.println("enter the 5 integer values ");
+
+        for(int i=0; i<5; i++)
+
+        {​​​​​
+
+            num[i]=sc.nextInt();
+
+        }​​​​​
+
+        System.out.println("======================================");
+
+        System.out.println("display the array!");
+
+        //to display
+
+        for(int i=0; i<5; i++)
+
+        {​​​​​
+
+            System.out.println(num[i]);
+
+        }​​​​​
+
+        System.out.println("======================================");
+
+        System.out.println("enhanced for loop");
+
+        for(int pr: num)
+
+        {​​​​​  //    v    arr
+
+            System.out.println(pr);
+
+        }​​​​​ 
+
+        //11.20  am 
+
+    }​​​​​ }​​​​​
+
+
+
+
+
+
+
+
+
+
+
+function overloadding
+the name of the function is same, but with different parameter
+sum(int a, int b)
+sum(int a, int b, int c)
+sum(double a, int b)
+sum(int a, double b)
+sum(float a, int b)
+ 
+--signature of the function
+1 number of parameters
+2 sequence  of parameters
+3 datatypes  of parameters
+ 
+--function signature is , it is nothing to do with the return type
+public int sum(int a, int b) {..}   
+public void sum(int a, int b) {..}
+ 
+
+--not a function overloadding
+
+
+
+
+
+
+
+============================================
+    System.out.println("===============================");
+        System.out.println("Calling the withdraw method ");
+
+        System.out.println("enter the value to withdraw");
+        double amt=sc.nextDouble();
+        hdfc.withdraw(amt);
+        System.out.println(hdfc);
+

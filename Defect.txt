@@ -1,0 +1,5 @@
+Defect :
+What Is Defect :
+Defect IS when we not get The Desirable Output As Per original buiseness Requirement/ defect is something error in coding which gives unexpected result.
+
+Defect PAttern:
